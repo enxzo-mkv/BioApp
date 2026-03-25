@@ -1,0 +1,243 @@
+/* Color Palette & Tech Fonts */
+:root {
+    --bg-color: #0d1117;       /* Dark background */
+    --container-bg: #161b22;   /* Slightly lighter dark for the 'page' */
+    --accent-color: #58a6ff;   /* Tech Blue */
+    --text-primary: #c9d1d9;    /* Light Gray for main text */
+    --text-secondary: #8b949e;  /* Dimmer Gray for subtitles */
+    --border-color: #30363d;
+    --skill-bg: #1f2937;
+    --skill-border: #374151;
+    --header-font: 'Inter', sans-serif;
+    --mono-font: 'Fira Code', monospace; /* Used for techy details */
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--header-font);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle Geometric Background Design */
+.background-accents {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1; /* Very subtle */
+    background-image: 
+        linear-gradient(rgba(88, 166, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90s, rgba(88, 166, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px; /* Grid pattern */
+}
+
+/* Main Container: Looks like a digital page */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: var(--container-bg);
+    padding: 60px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Header Section */
+header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-family: var(--mono-font); /* Monospace gives a 'coding' feel */
+}
+
+.contact-card {
+    background: #0d1117;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.contact-card p {
+    margin-bottom: 6px;
+}
+
+.contact-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Main Content Grid */
+main {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 50px;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+h2 i {
+    color: var(--accent-color);
+    margin-right: 12px;
+    font-size: 1.3rem;
+}
+
+/* Education Items */
+.edu-item {
+    margin-bottom: 25px;
+    border-left: 2px solid var(--border-color);
+    padding-left: 20px;
+    transition: border-color 0.3s;
+}
+
+.edu-item:hover {
+    border-left-color: var(--accent-color); /* Interactive glow on hover */
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.edu-header h3 {
+    font-size: 1.2rem;
+    color: #eee;
+}
+
+.date {
+    font-family: var(--mono-font);
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    background: rgba(88, 166, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.edu-meta {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style-type: none; /* Custom tech-style bullets */
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+ul li::before {
+    content: "→"; /* Terminal-style arrow */
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-family: var(--mono-font);
+}
+
+/* Skills Badges */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-badge {
+    background-color: var(--skill-bg);
+    color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--mono-font);
+    border: 1px solid var(--skill-border);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.skill-badge:hover {
+    background-color: rgba(88, 166, 255, 0.15);
+    transform: translateY(-2px); /* Subtle visual interaction */
+}
+
+/* Sidebar Styling */
+.sidebar h2 {
+    font-size: 1.3rem;
+}
+
+.detail-item {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-item .label {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.detail-item .value {
+    color: #fff;
+    font-family: var(--mono-font);
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+    main, header {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-card {
+        margin-top: 20px;
+    }
+}
